@@ -3,6 +3,12 @@
 {% block title %} Home {% endblock %}
 
 {% block content %}
+    {% if request.user.is_authenticated%}
+    <a href="{% url 'user_register' %}">Register</a>
+    {% else %}
+    <a href="{% url 'user_login' %}">login</a>
+    <a href="{% url 'user_logout' %}">logout</a>
+    {% endif %}
 
     <div class="card">
         {% for todo in todos %}
@@ -12,3 +18,4 @@
     
 
 {% endblock %} 
+

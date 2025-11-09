@@ -2,7 +2,8 @@
 
 {% block content %}
     <a href="{% url 'delete' todo.id %}" class = "btn btn-danger">Delete</a>
+    <a href="{% url 'update' todo.id %}" class = "btn btn-info">Update</a>
     <h3>{{ todo.tile }}</h3>
-    <small>{{ todo.created }}</small>
+    <small>{{ todo.created }}</small><hr/>
     <p>{{ todo.body }}</p>
-{% endblock %}
+{% endblock %} 
